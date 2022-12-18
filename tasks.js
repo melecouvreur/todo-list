@@ -7,16 +7,17 @@ button.addEventListener("click", addTask);
 
 let tasks = [];
 
-function addTask() {
+function addTask(event) {
+  event.preventDefault();
   let userInput = input.value;
 
   let li = document.createElement("li");
   li.innerText = userInput;
   ul.appendChild(li);
 
-  tasks.push(userInput); //in case we want to keep all tasks in array
+  tasks.push(userInput); 
 
   span.classList = "hide";
-  //clear input field once you are done
+  //clear input field once done
   input.value = "";
 }
